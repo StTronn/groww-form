@@ -19,3 +19,10 @@
 	justify-items: center;
 	align-items: center;
 }
+
+
+.primaryButton:hover{
+	background-color: var(--primaryClr);
+  opacity:0.8;
+  transition: 0.2s ease all;
+}

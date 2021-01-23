@@ -10,7 +10,9 @@ import "../../App.css";
 *    @example
 *    <PrimaryButton
 			  style={{ width: "150px", height: "50px" }}
-     />
+     >
+      Submit
+     </PrimaryButton>
 */
 const PrimaryButton = ({ onClick, style, children }) => {
   return (

@@ -1,0 +1,41 @@
+@keyframes collapse {
+  0% {
+    grid-template-columns: 4fr 6fr;
+  }
+  50% {
+    grid-template-columns: 4fr 6fr;
+  }
+  100% {
+    grid-template-columns: 4fr 6fr;
+  }
+}
+
+@keyframes collapsediv {
+  0% {
+    width: 10vw;
+  }
+  100% {
+    width: 100vw;
+  }
+}
+
+.leftCointainerDetails {
+  width: 100vw;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  animation: 2.4s ease collapsediv;
+}
+
+.imgBackgroundDetails {
+  background-size: cover;
+  background-image: url("../../assets/bannerPattern.svg");
+  background-position: center center;
+}
+.cointainerDetails {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: auto 0fr;
+  animation: 2.4s ease collapse;
+}

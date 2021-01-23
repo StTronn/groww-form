@@ -1,8 +1,9 @@
 import validate from "./validate.js";
 import { useFormik } from "formik";
 import { useHistory } from "react-router-dom";
+import routes from "../../router/webRoutes.js";
 
-const Func = () => {
+const useForm = () => {
 	const history = useHistory();
 
 	const formik = useFormik({
@@ -12,10 +13,10 @@ const Func = () => {
 		},
 		validate,
 		onSubmit: (values) => {
-			history.push("/details");
+			history.push(routes.DETAIL);
 		},
 	});
 	return formik;
 };
 
-export default Func;
+export default useForm;

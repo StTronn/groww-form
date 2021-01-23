@@ -12,6 +12,8 @@ import "../../App.css";
 *    <InputField
 *       placeholder="Enter Your Email"
 *       type="email"
+*       id ="email"
+*       name="email"
      />
 */
 const InputField = ({
@@ -25,7 +27,7 @@ const InputField = ({
   ...props
 }) => {
   const [focus, setFocus] = useState(false);
-  const labelClass=calculateLabelClass(value,focus,error);
+  const labelClass = calculateLabelClass(value, focus, error);
   return (
     <div style={{ position: "relative" }}>
       <input
@@ -41,21 +43,25 @@ const InputField = ({
         {...props}
       />
       <span className={labelClass}>{placeholder}</span>
-      {(!attempt || !error)  && <span style={{opacity:"0"}}>req </span>}
+      {(!attempt || !error) && <span style={{ opacity: "0" }}>req </span>}
       {attempt && error && <span className="errorInputField"> {error}</span>}
     </div>
   );
 };
 
-const calculateLabelClass =(value,focus,error,prefix='floating-label')=>{
+const calculateLabelClass = (
+  value,
+  focus,
+  error,
+  prefix = "floating-label"
+) => {
   let labelClass = `${prefix}-placeholder`;
   if (focus || value) {
     if (error) labelClass = `${prefix}-wrong`;
     else labelClass = `${prefix}-correct`;
   }
   return labelClass;
-  
-}
+};
 
 InputField.propTypes = {
   placeholder: PropTypes.string.isRequired,

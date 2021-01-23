@@ -19,10 +19,36 @@
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.titleDetails {
+  opacity: 0;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: var(--text);
+  animation: 1.2s ease fadeInUp;
+  animation-fill-mode: forwards;
+
+  animation-delay: 2.5s;
+}
+
 .leftCointainerDetails {
   width: 100vw;
   display: grid;
-  align-items: center;
   justify-items: center;
   animation: 2.4s ease collapsediv;
 }
@@ -34,6 +60,7 @@
 }
 .cointainerDetails {
   display: grid;
+  overflow-x: hidden;
   width: 100vw;
   height: 100vh;
   grid-template-columns: auto 0fr;

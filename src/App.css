@@ -1,6 +1,6 @@
 :root {
   --primaryClr: #0abb92;
-  --primaryLight:rgba(var(--primaryClr),0.95); 
+  --primaryLight: rgba(var(--primaryClr), 0.95);
   --primaryClr60: #0b5e49;
   --primaryClr30: #dfe7e3;
   --primaryClr10: #0e231e;
@@ -63,6 +63,15 @@ body {
   font-family: Roboto, system-ui;
   min-width: 320px;
   -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0 1px 5px 0 var(--boxShadow);
+}
+
+.clrText {
+  color: var(--text);
 }
 
 input {

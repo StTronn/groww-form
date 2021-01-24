@@ -1,5 +1,5 @@
 import React from "react";
-import LeftCointainer from "./LeftCointainer";
+import LoginForm from "./LoginForm";
 import RightCointainer from "./RightCointainer";
 import "./index.css";
 
@@ -12,7 +12,7 @@ import "./index.css";
 const LoginBanner = () => {
 	return (
 		<div className="cointainer">
-			<LeftCointainer />
+			<LoginForm />
 			<RightCointainer />
 		</div>
 	);

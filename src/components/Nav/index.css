@@ -1,0 +1,6 @@
+.cointainer {
+  display: grid;
+  height: 100px;
+  width: 100vw;
+  border-bottom: 1px solid var(--boxShadow);
+}

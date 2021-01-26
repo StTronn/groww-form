@@ -71,7 +71,7 @@
 
 .imgBackgroundDetails {
   background-size: cover;
-  background-image: url("../../assets/bannerPattern.svg");
+  background-image: url("./Images/bannerPattern.svg");
   background-position: center center;
 }
 .cointainerDetails {

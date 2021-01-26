@@ -7,7 +7,7 @@ import "./index.css";
 export const sections = { personal: "Personal Details", bank: "Bank Details" };
 
 const DetailCointainer = () => {
-  const [selectedSection, setSelectedSection] = useState(sections.personal);
+  const [selectedSection, setSelectedSection] = useState(sections.bank);
   return (
     <div className="cointainerDetails">
       <div className="leftCointainerDetails">

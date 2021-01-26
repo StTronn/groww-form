@@ -1,7 +1,7 @@
 import validate from "./validate.js";
 import { useFormik } from "formik";
 import { useHistory } from "react-router-dom";
-import routes from "../../router/webRoutes.js";
+import routes from "../../../router/webRoutes";
 
 const useForm = () => {
 	const history = useHistory();

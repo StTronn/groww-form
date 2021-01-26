@@ -1,5 +1,5 @@
 import React from "react";
-import DetailCointainer from "../components/DetailCointainer";
+import DetailCointainer from "./DetailCointainer/";
 
 const Detail = () => {
 	return (

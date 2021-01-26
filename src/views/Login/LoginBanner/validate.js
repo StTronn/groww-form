@@ -9,7 +9,8 @@ const validate = (values) => {
 
 	if (!values.password) {
 		errors.password = "Required";
-	}
+	} else if (! /^[a-zA-Z0-9]{8,}$/.test(values.password) )
+		errors.password='Must cointain at least 8 charachters'
 	return errors;
 };
 

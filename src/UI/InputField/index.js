@@ -32,7 +32,7 @@ const InputField = ({
   const labelClass = calculateLabelClass(value, focus, error,attempt);
   const inputClass = calculateLabelClass(value, focus, error,attempt,"inputField");
 
-  useEffect(()=>{setAttempt(false)},[value])
+  useEffect(()=>{setAttempt(false)},[value,setAttempt])
 
   return (
     <div style={{ position: "relative" }}>

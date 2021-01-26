@@ -26,6 +26,7 @@ const BankDetail = () => {
             id={field}
             name={field}
             placeholder={prompt[field]}
+            setAttempt={setAttempt}
             key={i}
 
           />

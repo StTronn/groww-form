@@ -11,6 +11,7 @@ const LoginForm = () => {
 		formik.handleSubmit();
 		setAttempt(true);
 	};
+
 	return (
 		<div className="leftCointainer">
 			<div>
@@ -29,7 +30,8 @@ const LoginForm = () => {
 							name={field}
 							placeholder={prompt[field]}
 							key={i}
-
+							type={field==='password'?field:'text'}
+							setAttempt={setAttempt}
 						/>
 					)}
 				</div>

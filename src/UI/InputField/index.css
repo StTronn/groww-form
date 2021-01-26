@@ -12,9 +12,50 @@
   padding-left: 2px;
 }
 
-.inputField:focus {
+.inputField-placeholder {
+  font-size: 15px;
+  padding: 10px 10px 10px 2px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--subText40);
+  box-shadow: none;
+  background: var(--primaryBg);
+  color: var(--text);
+  transition: all 0.2s ease;
+  padding-left: 2px;
+}
+
+.inputField-wrong {
+  font-size: 15px;
+  padding: 10px 10px 10px 2px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--subText40);
+  box-shadow: none;
+  background: var(--primaryBg);
+  color: var(--text);
+  transition: all 0.2s ease;
+  padding-left: 2px;
+  border-color: var(--growwRed);
+}
+
+.inputField-correct {
+  font-size: 15px;
+  padding: 10px 10px 10px 2px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--subText40);
+  box-shadow: none;
+  background: var(--primaryBg);
+  color: var(--text);
+  transition: all 0.2s ease;
+  padding-left: 2px;
   border-color: var(--primaryClr);
 }
+
 
 .floating-label {
   position: absolute;

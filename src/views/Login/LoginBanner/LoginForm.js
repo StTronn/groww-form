@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+
+import useForm from "./formik";
 import InputField from "../../../UI/InputField";
 import PrimaryButton from "../../../UI/PrimaryButton";
-import useForm from "./formik";
 
 const LoginForm = () => {
 	const [attempt, setAttempt] = useState(false);

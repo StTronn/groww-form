@@ -1,6 +1,8 @@
 import React from "react";
+
 import InputField from "../../../UI/InputField";
 import PrimaryButton from "../../../UI/PrimaryButton";
+
 import "./index.css";
 
 const BankDetail = () => {

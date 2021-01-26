@@ -1,11 +1,15 @@
 import React from "react";
+import {useHistory} from "react-router-dom"
+
+import routes from "../../../router/webRoutes"
 
 const DetailNav = ({ selected, sections, setSection }) => {
+  const history = useHistory();
   return (
     <div className="menuWrapperDetails card clrText">
       {Object.values(sections).map((section, i) => (
         <NavElements
-          onClick={() => setSection(section)}
+          onClick={() => history.push(`${routes.DEFAULT_DETAIL}/${section}`)}
           selected={selected}
           section={section}
           key={i}

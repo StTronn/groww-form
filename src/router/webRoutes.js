@@ -1,7 +1,8 @@
 const routes = {
-	LOGIN: "/",
+	LOGIN: "/login",
 	HOME: "/",
-	DETAIL: "/details",
+	DETAIL: "/details/:section",
+	DEFAULT_DETAIL: "/details",
 	PERSONAL_DETAILS: "/personal",
 	BANK_DETAILS: "/bank",
 };

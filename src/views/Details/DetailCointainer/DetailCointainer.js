@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import {useParams} from "react-router-dom"
 
 import {sections} from "../section";
 
@@ -9,21 +10,20 @@ import DetailNav from "./DetailNav.js";
 import "./index.css";
 
 
-const DetailCointainer = () => {
-  const [selectedSection, setSelectedSection] = useState(sections.bank);
+const DetailCointainer = ({section}) => {
+  console.log({section});
   return (
     <div className="cointainerDetails">
       <div className="leftCointainerDetails">
         <div className="fadeInUpDetailsDelay">
           <div className="gridDetails">
             <DetailNav
-              setSection={setSelectedSection}
-              selected={selectedSection}
+              selected={section}
               sections={sections}
             />
 
-            {selectedSection === sections.bank && <BankDetail />}
-            {selectedSection === sections.personal && <PersonalDetail />}
+            {section !== sections.personal && <BankDetail />}
+            {section === sections.personal && <PersonalDetail />}
           </div>
         </div>
       </div>
@@ -33,4 +33,17 @@ const DetailCointainer = () => {
   );
 };
 
-export default DetailCointainer;
+
+const DetailCointainerHoc=(DetailCointainer)=>{
+  const {section} = useParams();
+  //test to make sure component is mounted once 
+  useEffect(() => {
+    //do heavy one time request
+    console.log("mounted")
+  }, [])
+
+  return  <DetailCointainer section={section}/>
+}
+
+const DetailCointainerWrapper= ()=> DetailCointainerHoc(DetailCointainer);
+export default DetailCointainerWrapper;

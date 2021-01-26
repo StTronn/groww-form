@@ -13,11 +13,14 @@ const Routing = () => {
             <Route path={routes.DETAIL}>
               <Detail />
             </Route>
+            <Route path={routes.DEFAULT_DETAIL}>
+              <Detail />
+            </Route>
             <Route path={routes.LOGIN}>
               <Login />
             </Route>
-            <Route exact path={"/"}>
-              <Detail />
+            <Route exact path={routes.HOME}>
+              <Login />
             </Route>
           </Switch>
         </div>

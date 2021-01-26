@@ -28,7 +28,6 @@ const BankDetail = () => {
             placeholder={prompt[field]}
             setAttempt={setAttempt}
             key={i}
-
           />
         )}
       </div>

@@ -28,10 +28,8 @@ const PersonalDetail = () => {
             placeholder={prompt[field]}
             setAttempt={setAttempt}
             key={i}
-
           />
         )}
-        <InputField placeholder={"DOB"} name="dob" id={"dob"} type="dob" />
       </div>
       <div className="centerButton">
         <PrimaryButton style={{ width: "180px", height: "50px" }}>
@@ -45,6 +43,6 @@ const PersonalDetail = () => {
 };
 
 
-const prompt = { name: "Your Name", mobile: "Moblie No", dob: "DOB: dd/mm/yyyy" }
+const prompt = { name: "Your Name", mobile: "Moblie No", dob: "DOB dd/mm/yyyy" }
 
 export default PersonalDetail;

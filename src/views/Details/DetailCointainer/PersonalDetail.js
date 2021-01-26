@@ -1,6 +1,6 @@
 import React from "react";
-import InputField from "../../../styles/InputField";
-import PrimaryButton from "../../../styles/PrimaryButton";
+import InputField from "../../../UI/InputField";
+import PrimaryButton from "../../../UI/PrimaryButton";
 import "./index.css";
 
 const PersonalDetail = () => {

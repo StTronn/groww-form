@@ -19,25 +19,19 @@ const LoginForm = () => {
 					<span style={{ color: "var(--primaryClr)" }}> Groww</span>
 				</div>
 				<div className="fields">
-					<InputField
-						onChange={formik.handleChange}
-						value={formik.values.email}
-						error={formik.errors.email}
-						attempt={attempt}
-						id={"email"}
-						name="email"
-						placeholder={"Your Email Address"}
-						type="email"
-					/>
-					<InputField
-						onChange={formik.handleChange}
-						value={formik.values.password}
-						error={formik.errors.password}
-						attempt={attempt}
-						placeholder={"Password"}
-						id={"password"}
-						type="password"
-					/>
+					{Object.keys(formik.values).map((field, i) =>
+						<InputField
+							onChange={formik.handleChange}
+							value={formik.values[field]}
+							error={formik.errors[field]}
+							attempt={attempt}
+							id={field}
+							name={field}
+							placeholder={prompt[field]}
+							key={i}
+
+						/>
+					)}
 				</div>
 				<PrimaryButton
 					onClick={handleSubmit}
@@ -49,5 +43,7 @@ const LoginForm = () => {
 		</div>
 	);
 };
+
+const prompt = { email: "Your Email Address", password: "Password" }
 
 export default LoginForm;

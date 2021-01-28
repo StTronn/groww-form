@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+
+import {sections} from "../section";
+
 import BankDetail from "./BankDetail";
 import PersonalDetail from "./PersonalDetail";
 import DetailNav from "./DetailNav.js";
+
 import "./index.css";
 
-export const sections = { personal: "Personal Details", bank: "Bank Details" };
 
 const DetailCointainer = () => {
-  const [selectedSection, setSelectedSection] = useState(sections.personal);
+  const [selectedSection, setSelectedSection] = useState(sections.bank);
   return (
     <div className="cointainerDetails">
       <div className="leftCointainerDetails">

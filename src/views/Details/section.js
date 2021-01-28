@@ -1,0 +1,1 @@
+export const sections = {  bank: "Bank Details",personal: "Personal Details" };

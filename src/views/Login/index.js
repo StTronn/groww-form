@@ -1,5 +1,6 @@
 import React from "react";
-import LoginBanner from "../components/LoginBanner";
+
+import LoginBanner from "./LoginBanner";
 
 const Login = () => {
 	return (

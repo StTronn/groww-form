@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import InputField from "../../styles/InputField";
-import PrimaryButton from "../../styles/PrimaryButton";
-import useForm from "./formik";
 
-const LeftCointainer = () => {
+import useForm from "./formik";
+import InputField from "../../../UI/InputField";
+import PrimaryButton from "../../../UI/PrimaryButton";
+
+const LoginForm = () => {
 	const [attempt, setAttempt] = useState(false);
 	const formik = useForm();
 	const handleSubmit = () => {
@@ -49,4 +50,4 @@ const LeftCointainer = () => {
 	);
 };
 
-export default LeftCointainer;
+export default LoginForm;

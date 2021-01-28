@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./index.css";
 import PropTypes from "prop-types";
+
+import "./index.css";
 //added due to add dependices in bit.dev  & generating component library
 import "../../App.css";
 

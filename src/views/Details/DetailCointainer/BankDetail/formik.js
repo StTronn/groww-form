@@ -12,7 +12,6 @@ const useForm = () => {
 
 	const formik = useFormik({
 		initialValues: {
-			pan: null,
 			bNo: null,
 			ifsc: null,
 			bName: "",

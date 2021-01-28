@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import useForm from "./formik";
-import InputField from "../../../../UI/InputField";
-import PrimaryButton from "../../../../UI/PrimaryButton";
+import InputField from "../../../../ui/InputField";
+import Button from "../../../../ui/Button";
 
 
 const BankDetail = () => {
@@ -32,9 +32,9 @@ const BankDetail = () => {
         )}
       </div>
       <div className="centerButton">
-        <PrimaryButton style={{ width: "180px", height: "50px" }}>
-          Next
-        </PrimaryButton>
+        <Button style={{ width: "180px", height: "50px" }}>
+          Submit
+        </Button>
       </div>
       {/* this is only for animation */}
       <div className="imgBackgroundDetails"></div>
@@ -43,6 +43,6 @@ const BankDetail = () => {
 };
 
 
-const prompt = { pan: "Pan No", bNo: "Bank Acc No", ifsc: "IFSC Code", bName: "Bank Name" }
+const prompt = { bNo: "Bank Acc No", ifsc: "IFSC Code", bName: "Bank Name" }
 
 export default BankDetail;

@@ -1,7 +1,7 @@
-import React, { useState,useEffect } from "react";
+import React, { useEffect } from "react";
 import {useParams} from "react-router-dom"
 
-import {sections} from "../section";
+import {SECTION_PATH,SECTION_NAME} from "./detailConst";
 
 import BankDetail from "./BankDetail";
 import PersonalDetail from "./PersonalDetail";
@@ -10,28 +10,46 @@ import DetailNav from "./DetailNav.js";
 import "./index.css";
 
 
-const DetailCointainer = ({section}) => {
-  console.log({section});
-  return (
+class DetailCointainer extends React.PureComponent{
+
+  renderSection =()=>{
+    const {section} = this.props;
+    switch (section) {
+      case SECTION_PATH.bank:
+        return <BankDetail/> 
+    
+      case SECTION_PATH.personal:
+        return <PersonalDetail/> 
+    
+      default:
+        break;
+    } 
+  }
+
+  render(){
+    const {section} = this.props;
+    return(
     <div className="cointainerDetails">
       <div className="leftCointainerDetails">
         <div className="fadeInUpDetailsDelay">
           <div className="gridDetails">
             <DetailNav
               selected={section}
-              sections={sections}
+              sections={SECTION_NAME}
             />
 
-            {section !== sections.personal && <BankDetail />}
-            {section === sections.personal && <PersonalDetail />}
+            {this.renderSection()}
           </div>
         </div>
       </div>
       {/* this is only for animation */}
       <div className="imgBackgroundDetails"></div>
     </div>
-  );
-};
+    )
+  }
+}
+
+
 
 
 const DetailCointainerHoc=(DetailCointainer)=>{
@@ -39,7 +57,6 @@ const DetailCointainerHoc=(DetailCointainer)=>{
   //test to make sure component is mounted once 
   useEffect(() => {
     //do heavy one time request
-    console.log("mounted")
   }, [])
 
   return  <DetailCointainer section={section}/>

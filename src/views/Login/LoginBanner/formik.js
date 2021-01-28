@@ -17,7 +17,7 @@ const useForm = () => {
 		},
 		validate,
 		onSubmit: (values) => {
-			history.push(routes.DETAIL);
+			history.push(routes.PERSONAL_DETAILS);
 		},
 	});
 	return formik;

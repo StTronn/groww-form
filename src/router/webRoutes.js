@@ -3,8 +3,8 @@ const routes = {
 	HOME: "/",
 	DETAIL: "/details/:section",
 	DEFAULT_DETAIL: "/details",
-	PERSONAL_DETAILS: "/personal",
-	BANK_DETAILS: "/bank",
+	PERSONAL_DETAILS: "/details/personal-detail",
+	BANK_DETAILS: "/details/bank-detail",
 };
 
 export default routes;

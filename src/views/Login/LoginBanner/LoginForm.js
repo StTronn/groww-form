@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import useForm from "./formik";
-import InputField from "../../../UI/InputField";
-import PrimaryButton from "../../../UI/PrimaryButton";
+import InputField from "../../../ui/InputField";
+import Button from "../../../ui/Button";
 
 const LoginForm = () => {
 	const [attempt, setAttempt] = useState(false);
@@ -35,12 +35,12 @@ const LoginForm = () => {
 						/>
 					)}
 				</div>
-				<PrimaryButton
+				<Button
 					onClick={handleSubmit}
 					style={{ width: "100%", height: "50px" }}
 				>
 					Continue
-				</PrimaryButton>
+				</Button>
 			</div>
 		</div>
 	);

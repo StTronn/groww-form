@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import routes from "../../../../router/webRoutes";
 
-import validate from "./validate.js";
+import validate from "./validate";
 
 
 const useForm = () => {
@@ -11,13 +11,14 @@ const useForm = () => {
 
 	const formik = useFormik({
 		initialValues: {
+			pan:"",
 			name: "",
-			mobile: null,
+			mobile:"",
 			dob: "",
 		},
-		validate,
+		validationSchema:validate,
 		onSubmit: (values) => {
-			history.push(routes.DETAIL);
+			history.push(routes.BANK_DETAILS);
 		},
 	});
 	return formik;

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import routes from "../../../../router/webRoutes";
 
-import validate from "./validate";
+import validationSchema from "./validate";
 
 
 const useForm = () => {
@@ -16,7 +16,7 @@ const useForm = () => {
 			mobile:"",
 			dob: "",
 		},
-		validationSchema:validate,
+		validationSchema,
 		onSubmit: (values) => {
 			history.push(routes.BANK_DETAILS);
 		},

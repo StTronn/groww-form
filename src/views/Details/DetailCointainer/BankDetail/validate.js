@@ -1,16 +1,21 @@
-const validate = (values) => {
-	const errors = {};
-	if (
-		!values.email ||
-		!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-	) {
-		errors.email = "Invalid Email adress";
-	}
+import * as Yup from 'yup';
+const bankRegExp = /^\d{11}$/;
 
-	if (!values.password) {
-		errors.password = "required";
-	}
-	return errors;
-};
+const validationSchema = Yup.object({
+	bNo: Yup.string()
+		.matches(bankRegExp, 'Bank Acc No must be 11 digits')
+		.required('Required'),
 
-export default validate;
+	ifsc: Yup.string()
+		.matches(bankRegExp, 'IFSC code must be 11 digits')
+		.required('Required'),
+
+	bName: Yup.string()
+		.min(2, 'Too Short!')
+		.max(50, 'Too Long!')
+		.required('Required'),
+
+});
+
+
+export default validationSchema;

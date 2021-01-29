@@ -9,6 +9,11 @@ const BankDetail = () => {
   const [attempt, setAttempt] = useState(false);
   const formik = useForm();
 
+	const handleSubmit = () => {
+		formik.handleSubmit();
+		setAttempt(true);
+  };
+
   return (
     <div style={{ justifySelf: "center" }} className="fadeInUpDetails">
       <div className="titleDetails">
@@ -32,7 +37,9 @@ const BankDetail = () => {
         )}
       </div>
       <div className="centerButton">
-        <Button style={{ width: "180px", height: "50px" }}>
+        <Button
+          onClick={handleSubmit}
+          style={{ width: "180px", height: "50px" }}>
           Submit
         </Button>
       </div>

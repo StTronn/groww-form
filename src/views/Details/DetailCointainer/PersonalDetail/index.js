@@ -1,10 +1,8 @@
 import React,{useState} from "react";
-import {useHistory} from "react-router-dom";
 
 import useForm from "./formik";
 import InputField from "../../../../ui/InputField";
 import Button from "../../../../ui/Button";
-import routes from '../../../../router/webRoutes'
 
 
 const PersonalDetail = () => {

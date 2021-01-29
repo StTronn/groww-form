@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Button from "../../../../ui/Button";
 import InputField from "../../../../ui/InputField";
 import useForm from "./formik";
@@ -9,6 +9,15 @@ const PersonalDetail = () => {
   const [attempt, setAttempt] = useState(false);
   const [backspace, setBackSpace] = useState(false);
   const formik = useForm();
+
+  useEffect(()=>{
+    document.getElementById("dob").onkeydown=(e)=>{
+      if (! ((e.keyCode>=48 && e.keyCode<=57) || e.keyCode===8 || e.keyCode===191)){
+        e.preventDefault();
+      }
+    
+    }
+  },[])
 
   const handleSubmit = () => {
     formik.handleSubmit();

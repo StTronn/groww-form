@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import {useParams} from "react-router-dom"
 
-import {sections} from "../section";
+import {SECTION_PATH,SECTION_NAME} from "./detailConst";
 
+import NotFound from "../../../views/NotFound";
 import BankDetail from "./BankDetail";
 import PersonalDetail from "./PersonalDetail";
 import DetailNav from "./DetailNav.js";
@@ -9,28 +11,57 @@ import DetailNav from "./DetailNav.js";
 import "./index.css";
 
 
-const DetailCointainer = () => {
-  const [selectedSection, setSelectedSection] = useState(sections.bank);
-  return (
+class DetailCointainer extends React.PureComponent{
+
+  renderSection =()=>{
+    const {section} = this.props;
+    switch (section) {
+      case SECTION_PATH.bank:
+        return <BankDetail/> 
+    
+      case SECTION_PATH.personal:
+        return <PersonalDetail/> 
+    
+      default:
+        return <NotFound/>
+    } 
+  }
+
+  render(){
+    const {section} = this.props;
+    return(
     <div className="cointainerDetails">
       <div className="leftCointainerDetails">
         <div className="fadeInUpDetailsDelay">
           <div className="gridDetails">
             <DetailNav
-              setSection={setSelectedSection}
-              selected={selectedSection}
-              sections={sections}
+              selected={section}
+              sections={SECTION_NAME}
             />
 
-            {selectedSection === sections.bank && <BankDetail />}
-            {selectedSection === sections.personal && <PersonalDetail />}
+            {this.renderSection()}
           </div>
         </div>
       </div>
       {/* this is only for animation */}
       <div className="imgBackgroundDetails"></div>
     </div>
-  );
-};
+    )
+  }
+}
 
-export default DetailCointainer;
+
+
+
+const DetailCointainerHoc=(DetailCointainer)=>{
+  const {section} = useParams();
+  //test to make sure component is mounted once 
+  useEffect(() => {
+    //do heavy one time request
+  }, [])
+
+  return  <DetailCointainer section={section}/>
+}
+
+const DetailCointainerWrapper= ()=> DetailCointainerHoc(DetailCointainer);
+export default DetailCointainerWrapper;

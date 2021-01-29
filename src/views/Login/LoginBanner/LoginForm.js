@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import useForm from "./formik";
-import InputField from "../../../UI/InputField";
-import PrimaryButton from "../../../UI/PrimaryButton";
+import InputField from "../../../ui/InputField";
+import Button from "../../../ui/Button";
 
 const LoginForm = () => {
 	const [attempt, setAttempt] = useState(false);
@@ -11,6 +11,7 @@ const LoginForm = () => {
 		formik.handleSubmit();
 		setAttempt(true);
 	};
+
 	return (
 		<div className="leftCointainer">
 			<div>
@@ -19,35 +20,32 @@ const LoginForm = () => {
 					<span style={{ color: "var(--primaryClr)" }}> Groww</span>
 				</div>
 				<div className="fields">
-					<InputField
-						onChange={formik.handleChange}
-						value={formik.values.email}
-						error={formik.errors.email}
-						attempt={attempt}
-						id={"email"}
-						name="email"
-						placeholder={"Your Email Address"}
-						type="email"
-					/>
-					<InputField
-						onChange={formik.handleChange}
-						value={formik.values.password}
-						error={formik.errors.password}
-						attempt={attempt}
-						placeholder={"Password"}
-						id={"password"}
-						type="password"
-					/>
+					{Object.keys(formik.values).map((field, i) =>
+						<InputField
+							onChange={formik.handleChange}
+							value={formik.values[field]}
+							error={formik.errors[field]}
+							attempt={attempt}
+							id={field}
+							name={field}
+							placeholder={prompt[field]}
+							key={i}
+							type={field==='password'?field:'text'}
+							setAttempt={setAttempt}
+						/>
+					)}
 				</div>
-				<PrimaryButton
+				<Button
 					onClick={handleSubmit}
 					style={{ width: "100%", height: "50px" }}
 				>
 					Continue
-				</PrimaryButton>
+				</Button>
 			</div>
 		</div>
 	);
 };
+
+const prompt = { email: "Your Email Address", password: "Password" }
 
 export default LoginForm;

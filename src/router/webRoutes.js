@@ -1,9 +1,10 @@
 const routes = {
-	LOGIN: "/",
+	LOGIN: "/login",
 	HOME: "/",
-	DETAIL: "/details",
-	PERSONAL_DETAILS: "/personal",
-	BANK_DETAILS: "/bank",
+	DETAIL: "/details/:section",
+	DEFAULT_DETAIL: "/details",
+	PERSONAL_DETAILS: "/details/personal-detail",
+	BANK_DETAILS: "/details/bank-detail",
 };
 
 export default routes;

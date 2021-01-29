@@ -1,9 +1,9 @@
 import { useFormik } from "formik";
 import { useHistory } from "react-router-dom";
 
-import routes from "../../../router/webRoutes";
+import routes from "../../../../router/webRoutes";
 
-import validate from "./validate.js";
+import validationSchema from "./validate.js";
 
 
 
@@ -12,12 +12,13 @@ const useForm = () => {
 
 	const formik = useFormik({
 		initialValues: {
-			email: "",
-			password: "",
+			bNo: "",
+			ifsc: "",
+			bName: "",
 		},
-		validate,
+		validationSchema,
 		onSubmit: (values) => {
-			history.push(routes.PERSONAL_DETAILS);
+			history.push(routes.LOGIN);
 		},
 	});
 	return formik;

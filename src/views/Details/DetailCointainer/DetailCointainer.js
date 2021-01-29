@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom"
 
 import {SECTION_PATH,SECTION_NAME} from "./detailConst";
 
+import NotFound from "../../../views/NotFound";
 import BankDetail from "./BankDetail";
 import PersonalDetail from "./PersonalDetail";
 import DetailNav from "./DetailNav.js";
@@ -22,7 +23,7 @@ class DetailCointainer extends React.PureComponent{
         return <PersonalDetail/> 
     
       default:
-        break;
+        return <NotFound/>
     } 
   }
 

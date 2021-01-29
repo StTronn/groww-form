@@ -4,28 +4,29 @@ import routes from "./webRoutes";
 
 import Login from "../views/Login";
 import Detail from "../views/Details";
+import NotFound from "../views/NotFound";
 
 const Routing = () => {
-    return (
-        <Router>
-        <div>
-          <Switch>
-            <Route path={routes.DETAIL}>
-              <Detail />
-            </Route>
-            <Route path={routes.DEFAULT_DETAIL}>
-              <Detail />
-            </Route>
-            <Route path={routes.LOGIN}>
-              <Login />
-            </Route>
-            <Route exact path={routes.HOME}>
-              <Login />
-            </Route>
-          </Switch>
-        </div>
-      </Router>   
-    )
+  return (
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path={routes.DETAIL}>
+            <Detail />
+          </Route>
+          <Route path={routes.LOGIN}>
+            <Login />
+          </Route>
+          <Route exact path={routes.HOME}>
+            <Login />
+          </Route>
+          <Route >
+            <NotFound />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  )
 }
 
 export default Routing;

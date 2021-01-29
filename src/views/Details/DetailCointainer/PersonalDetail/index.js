@@ -82,8 +82,9 @@ const prompt = { pan:"Pan No",name: "Your Name", mobile: "Moblie No", dob: "DOB 
 
 
 const addSlashes= (date)=>{
-    var numChars = date.length;
-    if(numChars === 2 || numChars === 5){
+    const numChars = date.length;
+    if (numChars===2 && date[numChars-1]==='/') date='0'+date;
+    else if(numChars === 2 || numChars === 5){
         date += '/';
   }
   return date;

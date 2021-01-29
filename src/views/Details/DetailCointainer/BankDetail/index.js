@@ -32,6 +32,7 @@ const BankDetail = () => {
             name={field}
             placeholder={prompt[field]}
             setAttempt={setAttempt}
+            type={type[field]}
             key={i}
           />
         )}
@@ -51,5 +52,7 @@ const BankDetail = () => {
 
 
 const prompt = { bNo: "Bank Acc No", ifsc: "IFSC Code", bName: "Bank Name" }
+
+const type={bNo:'number',ifsc:'number',bName:'text'}
 
 export default BankDetail;

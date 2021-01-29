@@ -55,6 +55,7 @@ const PersonalDetail = () => {
             placeholder={prompt[field]}
             setAttempt={setAttempt}
             key={i}
+            type={type[field]}
             onKeyDown={(e) => {
               if (e.keyCode === 8) setBackSpace(true);
               else setBackSpace(false);
@@ -79,6 +80,8 @@ const PersonalDetail = () => {
 
 
 const prompt = { pan: "Pan No", name: "Your Name", mobile: "Moblie No", dob: "DOB dd/mm/yyyy" }
+
+const type={pan:'text',name:'text',mobile:'number',dob:'text'}
 
 
 const addSlashes = (date) => {
